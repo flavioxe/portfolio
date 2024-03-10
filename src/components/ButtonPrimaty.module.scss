@@ -4,7 +4,7 @@
     display: inline-flex;
     height: 2.5rem;
     width: fit-content;
-    border: 1px solid $gray2;
+    border: 1px solid $gray;
     background-color: transparent;
     padding: 0.5rem;
     text-decoration: none;
@@ -25,7 +25,7 @@
         }
 
         .btnText {
-            color: $white;
+            color: $gray3;
         }
     }
 }
@@ -36,7 +36,7 @@
     opacity: 0;
     line-height: 40px;
     border-radius: 50%;
-    background: $gray2;
+    background: $gray;
     position: absolute;
     transition: all .5s ease-Out;
     top: 20px;
@@ -46,7 +46,7 @@
 .btnText {
     position: relative;
     transition: all .45s ease-Out;
-    color: $gray2;
+    color: $gray;
     text-decoration: none;
     letter-spacing: 1px;
 }

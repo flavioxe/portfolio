@@ -1,22 +1,85 @@
 @import '../global.scss';
 
+// .bannerWrapper {
+//     flex-wrap: wrap;
+// }
+
 .bannerWrapper {
-    flex-wrap: wrap;
-}
-
-.bannerText {
-    font-size: 18rem;
+    color: $gray;
     font-family: "Bebas Neue", sans-serif;
+    height: 90vmin;
+    width: 90%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.aboutWrapper {
-    .aboutTitle {
-        font-family: "Bebas Neue", sans-serif;
-        font-size: 0.8rem;
-        margin-right: 0.5rem;
-    }
-    .aboutDescription {
-        font-family: "Open Sans", arial;
-        font-size: 0.8rem;
-    }
+.bannerWrapper > div {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.bannerWrapper > div div {
+    font-size: 18rem;
+    padding: 0;
+    position: absolute;
+}
+  .bannerWrapper > div div span {
+    display: block;
+  }
+  .bannerWrapper > div.textTop {
+    border-bottom: 0px solid transparent;
+    top: 0;
+  }
+  .bannerWrapper > div.textTop div {
+    animation: showTopText 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    bottom: 0;
+    transform: translate(0, 100%);
+  }
+  .bannerWrapper > div.textTop div span:first-child {
+    color: #767676;
+  }
+  .bannerWrapper > div.textBottom {
+    bottom: 0;
+  }
+  .bannerWrapper > div.textBottom div {
+    animation: showBottomText 0.8s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    top: 0;
+    transform: translate(0, -100%);
+  }
+
+// .bannerText {
+//     font-size: 18rem;
+//     font-family: "Bebas Neue", sans-serif;
+//     color: $gray;
+// }
+
+// .aboutWrapper {
+    // }
+        .aboutTitle {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+.aboutDescription {
+    font-family: "Open Sans", arial;
+    font-size: 0.8rem;
+}
+
+@keyframes showTopText {
+    0% { transform: translate3d(0, 100%, 0); }
+    // 40%, 60% { transform: translate3d(0, 50%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes showBottomText {
+    0% { transform: translate3d(0, -100%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
 }

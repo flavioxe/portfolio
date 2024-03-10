@@ -6,8 +6,10 @@ $green4: #3a5a40;
 $white: #f9f7f3;
 $brown1: #faedcd;
 $brown2: #d4a373;
+$gray: #c2c2c2;
 $gray1: #403d39;
 $gray2: #252422;
+$gray3: #282828;
 $tomato: #f7a072;
 
 * {
@@ -21,7 +23,7 @@ $tomato: #f7a072;
 }
 
 a {
-    color: $gray2;
+    color: $gray;
     text-decoration: none;
     position: relative;
 
@@ -32,7 +34,7 @@ a {
         height: 0.063rem;
         bottom: 0;
         left: 0;
-        background-color: $gray2;
+        background-color: $gray;
         visibility: hidden;
         -webkit-transform: scaleX(0);
         transform: scaleX(0);

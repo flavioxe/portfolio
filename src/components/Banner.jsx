@@ -4,28 +4,29 @@ export function Banner() {
   return (
     <>
       <section
-        className={`${styles.bannerWrapper} container d-flex align-items-center justify-content-start`}
+        className={`${styles.bannerWrapper}  d-flex align-items-center justify-content-start`}
       >
-        <main className="d-flex align-items-center">
-          <h1 className={`${styles.bannerText}`}>Full___Stack</h1>
-          {/* <h1 className={`${styles.bannerHash}`}>-</h1>
-          <h1 className={`${styles.bannerText}`}>Stack</h1> */}
-        </main>
-
-        <main className="d-flex align-items-center">
-          <h1 className={`${styles.bannerText}`}>Developer</h1>
-          <p className={styles.aboutWrapper}>
-            <span className={styles.aboutTitle}>ABOUT</span>
-            <span className={styles.aboutDescription}>
-              I'm Flávio, a fullstack developer based in Recife. With a
-              background in architecture and urbanism, I bring a unique
-              perspective to my work in web development. Currently, I'm also
-              studying Information Technology Management to enhance my skills.
-              My passion lies in crafting engaging digital experiences. Let's
-              collaborate on innovative projects!
+        <div className={styles.textTop}>
+          <div>
+            <span>full___stack</span>
+          </div>
+        </div>
+        <div className={styles.textBottom}>
+          <div className="d-flex align-items-center">
+            developer{" "}
+            <span className={styles.aboutTitle}>
+              ABOUT{" "}
+              <span className={styles.aboutDescription}>
+                I'm Flávio, a fullstack developer based in Recife. With a
+                background in architecture and urbanism, I bring a unique
+                perspective to my work in web development. My passion lies in
+                crafting engaging digital experiences so I'm currently studying
+                Information Technology Management to enhance my skills. Let's
+                collaborate on innovative projects!
+              </span>
             </span>
-          </p>
-        </main>
+          </div>
+        </div>
       </section>
     </>
   );
