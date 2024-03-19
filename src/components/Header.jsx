@@ -5,7 +5,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`${styles.header} d-flex align-items-center justify-content-between container`}
+        className={`${styles.header} d-flex align-items-center justify-content-between`}
       >
         <img src="https://github.com/flavioxe.png" alt="Flávio's logo" />
 
