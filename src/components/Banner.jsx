@@ -8,8 +8,6 @@ export function Banner() {
       >
         <main className="d-flex align-items-center">
           <h1 className={`${styles.bannerText}`}>Full___Stack</h1>
-          {/* <h1 className={`${styles.bannerHash}`}>-</h1>
-          <h1 className={`${styles.bannerText}`}>Stack</h1> */}
         </main>
         <main className="d-flex align-items-center">
           <h1 className={`${styles.bannerText}`}>Developer</h1>

@@ -1,7 +1,22 @@
+import { useTranslation } from "react-i18next";
 import { ButtonPrimary } from "./ButtonPrimary";
 import styles from "./Header.module.scss";
+import { useState } from "react";
 
 export function Header() {
+  const {
+    t,
+    i18n: { changeLanguage, language },
+  } = useTranslation();
+
+  const [currentLanguage, setCurrentLanguage] = useState(language);
+
+  const handleChangeLanguage = () => {
+    const newLanguage = currentLanguage === "en" ? "pt" : "en";
+    changeLanguage(newLanguage);
+    setCurrentLanguage(newLanguage);
+  };
+
   return (
     <>
       <header
@@ -11,13 +26,16 @@ export function Header() {
 
         <nav className="d-flex align-items-center">
           <a href="#" className="btnLink">
-            Projects
+            {t("projects")}
           </a>
           <a href="#" className="btnLink">
-            About me
+            {t("aboutMe")}
           </a>
 
-          <ButtonPrimary text="Contact" />
+          <ButtonPrimary text={`${t("contact")}`} />
+
+          <button onClick={handleChangeLanguage}>PT</button>
+          <button onClick={handleChangeLanguage}>EN</button>
         </nav>
       </header>
     </>
