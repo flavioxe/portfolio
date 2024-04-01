@@ -18,6 +18,7 @@ export function SingleRecommendation({ name, avatar, linkedin, review }) {
             </p>
             <a
               href={`${linkedin}`}
+              target="_blank"
               className={`${styles.recommendationLinkein} d-flex align-items-center justify-content-center`}
             >
               in

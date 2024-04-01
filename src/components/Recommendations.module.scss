@@ -1,6 +1,6 @@
 @import '../global.scss';
 
-.recommendationsWrapper {    
+.recommendationsWrapper { 
     position: relative;
     height: 200px;
     width: 100%;
@@ -21,10 +21,12 @@
 
     .recommendationBox {      
         width: fit-content;
-        height: 10rem;
+        max-width: 50rem;
+        height: 12rem;
         padding: 1rem;
         background-color: $gray1;
         border-radius: 10px;
+        gap: 1rem;
 
         animation: moveSlideshow 34s linear infinite;
 

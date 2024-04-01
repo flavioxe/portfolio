@@ -1,0 +1,30 @@
+@import '../global.scss';
+
+.aboutWrapper {
+    padding: 2rem;
+
+    .aboutAside {
+        gap: 1rem;
+        width: 60%;
+
+        .aboutTitle {
+            color: $white;
+        }
+    }
+
+    .aboutPhoto {
+        position: relative;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 8px;
+        object-fit: cover;
+        filter: grayscale(1);
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+
+        &:hover {
+            transform: rotateX(180deg);
+        }
+    }
+}

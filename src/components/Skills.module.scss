@@ -1,0 +1,23 @@
+@import '../global.scss';
+
+.skillsWrapper {
+    padding: 2rem;
+
+    .skillsList {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding-top: 2rem;
+        gap: 2rem;
+        flex-wrap: wrap;
+
+        .skill {
+            border-radius: 8px;
+            background-color: $gray1;
+            transition: 0.3s;
+            
+            &:hover {
+                transform: translateY(-5px);
+            }
+        }
+    }
+}
