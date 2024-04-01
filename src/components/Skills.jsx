@@ -1,11 +1,14 @@
 import styles from "./Skills.module.scss";
 import { Skill } from "./Skill";
+import { useTranslation } from "react-i18next";
 
 export function Skills() {
+  const { t } = useTranslation();
+
   return (
     <>
       <section className={`${styles.skillsWrapper} d-flex flex-column`}>
-        <h2>My skills</h2>
+        <h2>{t("mySkills")}</h2>
 
         <main className={`${styles.skillsList}`}>
           <Skill text="HTML" />

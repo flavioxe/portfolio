@@ -1,10 +1,13 @@
+import { useTranslation } from "react-i18next";
 import styles from "./Projects.module.scss";
 
 export function Projects() {
+  const { t } = useTranslation();
+
   return (
     <>
       <section className={`${styles.projectsWrapper} d-flex flex-column`}>
-        <h2 className={`${styles.projectsTitle}`}>PROJECTS</h2>
+        <h2 className={`${styles.projectsTitle}`}>{t("projects")}</h2>
         <main className={`${styles.projectsList} d-flex flex-column`}>
           {/* Single project */}
           <div className={`${styles.projectBox} d-flex align-items-center`}>
@@ -27,7 +30,7 @@ export function Projects() {
                 culpa corporis illum optio sapiente dolor officia accusamus
                 inventore saepe velit amet?
               </p>
-              <a href="#">Visit here ⭷</a>
+              <a href="#">{t("visit")}</a>
             </aside>
           </div>
 
@@ -47,7 +50,7 @@ export function Projects() {
                 culpa corporis illum optio sapiente dolor officia accusamus
                 inventore saepe velit amet?
               </p>
-              <a href="#">Visit here ⭷</a>
+              <a href="#">{t("visit")}</a>
             </aside>
             <img
               src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/03/Beyonce-funk-brasileiro-novo-album-cowboy-carter-e1711744764932.jpg?w=891"

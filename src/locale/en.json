@@ -3,6 +3,21 @@
         "about": "About",
         "aboutMe": "About me",
         "projects": "Projects",
-        "contact": "Contact"
+        "bannerAbout": "I'm Flávio, a fullstack developer based in Recife. With a background in architecture and urbanism, I bring a unique perspective to my work in web development. My passion lies in crafting engaging digital experiences. Let's collaborate on innovative projects!",
+        "visit": "Visit here ⭷",
+        "michael": "We worked together on the same team in our company, where I could witness his dedication and professionalism. In addition to his remarkable technical skills, Flávio is an inspiring team leader. His active participation in meetings and contagious energy always boosted the team, facilitating collaborative and effective decision-making.",
+        "juliana": "We studied and worked together, and both as a study colleague and as a coworker, Flávio demonstrated his ability to collaborate effectively on team projects. His focused attitude and willingness to listen to new ideas contributed with insightful inputs towards an efficient collaborative effort.",
+        "eduardo": "We worked on projects together in college. Flávio showcased exceptional dedication and technical skills.",
+        "beatriz": "Flávio excelled in our college projects, showcasing strong teamwork and leadership qualities. His collaborative approach and ability to inspire made him a valuable asset to our team.",
+        "rafael": "I had the opportunity to work with Flávio, a talented Front-End developer, proficient in Vue.js, Nuxt.js, React.js, JavaScript, HTML, CSS, SASS, Bootstrap, among others. Flávio stands out for his adaptability and quick learning ability, enabling him to tackle new challenges efficiently.",
+        "hello": "Hello",
+        "presentation": "I'm Flávio Mendonça, a fullstack developer.",
+        "aboutDescription": "Coming from a background in architecture and urbanism, three years ago I embarked on an exciting journey, transitioning my career into the realm of fullstack development. This shift has allowed me to bring a unique perspective to my work, combining my design sensibilities with technical expertise. I thrive in collaborative environments, adapting swiftly to new challenges while maintaining a keen focus on achieving results. Eager to embrace continuous learning, I am passionate about exploring new technologies and approaches to enhance my skills and contribute effectively to dynamic teams and projects.",
+        "mySkills": "My skills",
+        "workTogether": "Let's work together!",
+        "reachOut": "Reach out",
+        "mySocials": "My socials",
+        "backToTop": "Back to the top"
+
     }
 }

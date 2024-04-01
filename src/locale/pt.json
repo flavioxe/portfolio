@@ -3,6 +3,21 @@
         "about": "Sobre",
         "aboutMe": "Sobre mim",
         "projects": "Projetos",
-        "contact": "Contato"
+        "contact": "Contato",
+        "bannerAbout": "Eu sou Flávio, um desenvolvedor fullstack de Recife. Com formação em arquitetura e urbanismo, trago uma perspectiva única para o meu trabalho como desenvolvedor web. Sou apaixonado em criar experiências digitais cativantes. Vamos impactar com projetos inovadores!",
+        "visit": "Acesse aqui ⭷",
+        "michael": "Nós trabalhamos juntos na mesma equipe em nossa empresa, onde pude testemunhar sua dedicação e profissionalismo. Além de suas notáveis habilidades técnicas, Flávio é um líder de equipe inspirador. Sua participação ativa em reuniões e energia contagiante sempre impulsionaram a equipe, facilitando a tomada de decisões colaborativas e eficazes.",
+        "juliana": "Nós estudamos e trabalhamos juntos, e tanto como colega de estudos quanto como colega de trabalho, Flávio demonstrou sua capacidade de colaborar efetivamente em projetos de equipe. Sua atitude focada e disposição para ouvir novas ideias contribuíram com insights perspicazes para um esforço colaborativo eficiente.",
+        "eduardo": "Nós trabalhamos em projetos juntos na faculdade. Flávio demonstrou dedicação excepcional e habilidades técnicas.",
+        "beatriz": "Flávio se destacou em nossos projetos na faculdade, demonstrando forte competência de trabalho em equipe e qualidades de liderança. Sua abordagem colaborativa e capacidade de inspirar o tornaram um membro valioso para nossa equipe.",
+        "rafael": "Tive a oportunidade de trabalhar com Flávio, um talentoso desenvolvedor Front-End, proficiente em Vue.js, Nuxt.js, React.js, JavaScript, HTML, CSS, SASS, Bootstrap, entre outros. Flávio se destaca por sua adaptabilidade e rápida capacidade de aprendizado, o que o permite enfrentar novos desafios de forma eficiente.",
+        "hello": "Olá",
+        "presentation": "Sou Flávio Mendonça, um desenvolvedor fullstack.",
+        "aboutDescription": "Formado em arquitetura e urbanismo, há três anos, embarquei em uma jornada emocionante, fazendo a transição da minha carreira para o mundo do desenvolvimento fullstack. Essa mudança me permitiu trazer uma perspectiva única para o meu trabalho, combinando minha sensibilidade de design com experiência técnica. Eu me dou bem em ambientes colaborativos, adaptando-me rapidamente a novos desafios, enquanto mantenho um foco aguçado na obtenção de resultados. Empolgado em relação a aprendizagem contínua, sou apaixonado por explorar novas tecnologias e abordagens para aprimorar minhas habilidades e contribuir de forma eficaz para equipes e projetos dinâmicos.",
+        "mySkills": "Minhas habilidades",
+        "workTogether": "Vamos trabalhar juntos!",
+        "reachOut": "Entre em contato",
+        "mySocials": "Minhas redes sociais",
+        "backToTop": "Voltar para o topo"
     }
 }

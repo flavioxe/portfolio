@@ -1,7 +1,10 @@
+import { useTranslation } from "react-i18next";
 import { ButtonPrimary } from "./ButtonPrimary";
 import styles from "./Footer.module.scss";
 
 export function Footer() {
+  const { t } = useTranslation();
+
   return (
     <>
       <footer
@@ -15,16 +18,16 @@ export function Footer() {
             className={`${styles.footerEmailBox} d-flex align-items-start`}
           >
             <div>
-              <h5>Let's work together!</h5>
+              <h5>{t("workTogether")}</h5>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
-            <ButtonPrimary text="Reach out" />
+            <ButtonPrimary text={`${t("reachOut")}`} />
           </aside>
 
           <aside className={`${styles.footerMenuBox} d-flex`}>
             {/* Socials */}
             <div className={`d-flex flex-column`}>
-              <h5>My Socials</h5>
+              <h5>{t("mySocials")}</h5>
               <a href="#">LinkedIn</a>
               <a href="#">Github</a>
             </div>
@@ -32,9 +35,9 @@ export function Footer() {
             {/* Website */}
             <div className={`d-flex flex-column`}>
               <h5>Site</h5>
-              <a href="#"> Projects</a>
-              <a href="#"> About me</a>
-              <a href="#">Back to the top 🡡</a>
+              <a href="#">{t("projects")}</a>
+              <a href="#">{t("aboutMe")}</a>
+              <a href="#">{t("backToTop")} 🡡</a>
             </div>
           </aside>
         </main>

@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next";
 import styles from "./Banner.module.scss";
 
 export function Banner() {
+  const { t } = useTranslation();
+
   return (
     <>
       <section
@@ -12,14 +15,8 @@ export function Banner() {
         <main className="d-flex align-items-center">
           <h1 className={`${styles.bannerText}`}>Developer</h1>
           <p className={styles.aboutWrapper}>
-            <span className={styles.aboutTitle}>ABOUT</span>
-            <span className={styles.aboutDescription}>
-              I'm Flávio, a fullstack developer based in Recife. With a
-              background in architecture and urbanism, I bring a unique
-              perspective to my work in web development. My passion lies in
-              crafting engaging digital experiences. Let's collaborate on
-              innovative projects!
-            </span>
+            <span className={styles.aboutTitle}>{t("about")}</span>
+            <span className={styles.aboutDescription}>{t("bannerAbout")}</span>
           </p>
         </main>
       </section>
