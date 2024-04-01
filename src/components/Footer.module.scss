@@ -1,0 +1,34 @@
+@import '../global.scss';
+
+.footerWrapper {
+    background-color: $gray1;
+    padding: 2rem 2rem 10rem 2rem;
+    gap: 1rem;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    overflow: hidden;
+    z-index: 2;
+    
+    .footerUpperBox {
+        position: relative;
+        z-index: 2;
+    }
+
+    .footerEmailBox {
+        gap: 2rem;
+    }
+
+    .footerMenuBox {
+        gap: 6rem;
+    }
+
+    .footerFlavio {
+        pointer-events: none;
+        position: absolute;
+        bottom: -125%;
+        left: 50%;
+        transform: translate(-50%);
+        font-size: 30em;
+        z-index: 1;
+    }
+}

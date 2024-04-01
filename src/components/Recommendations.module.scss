@@ -1,0 +1,63 @@
+@import '../global.scss';
+
+.recommendationsWrapper {    
+    position: relative;
+    height: 200px;
+    width: 100%;
+    margin-top: 2rem;
+    overflow: hidden;
+
+    .recommendationsAnimation {
+        display: flex;
+        gap: 2rem;
+        width: 200%;
+        position: absolute;
+        animation: marquee 45s linear infinite;
+
+        &:hover {
+            animation-play-state: paused;
+        }
+    }
+
+    .recommendationBox {      
+        width: fit-content;
+        height: 10rem;
+        padding: 1rem;
+        background-color: $gray1;
+        border-radius: 10px;
+
+        animation: moveSlideshow 34s linear infinite;
+
+        .recommendationBoxHeader {
+            gap: 1rem;
+            
+            .recommendationAvatar {
+                width: 3rem;
+                height: 3rem;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+            .recommendationBoxName {
+                gap: 0.5rem;
+            }
+
+            .recommendationLinkein {
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 10px;
+                background-color: $gray3;
+
+                &:hover::before {
+                    visibility: hidden;   
+                }
+            }
+        }
+    }
+}
+
+@keyframes marquee {
+    0% { left: 0; }
+    50% { left: -100%; }
+    100% { left: 0; }
+  }
