@@ -2,4 +2,14 @@
 
 .experiencesWrapper {
     padding: 0 2rem;
+    gap: 2rem;
+
+    .experiencesNavItem {
+        a {            
+            &::before {
+                visibility: hidden;
+            }
+        }
+       
+    }
 }
