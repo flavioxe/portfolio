@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import Header from "./components/Header";
@@ -12,7 +10,7 @@ import { I18nContext } from "./components/I18nContext";
 
 export default function Home() {
   const { locale } = useContext(I18nContext);
-  const name = locale === "pt" ? "Seu Nome" : "Your Name";
+  const name = "Flávio Mendonça Silva";
   const role = locale === "pt" ? "Desenvolvedor Front-end" : "Front-end Developer";
   const projects: Project[] = [
     locale === "pt"
@@ -22,7 +20,7 @@ export default function Home() {
           desc: "Descrição curta do projeto 1.",
           techs: ["Next.js", "TypeScript", "Tailwind"],
           year: 2026,
-          image: "/project1.jpg",
+          image: "/assets/ferb.jpg",
         }
       : {
           name: "Project 1",
@@ -30,7 +28,7 @@ export default function Home() {
           desc: "Short description of project 1.",
           techs: ["Next.js", "TypeScript", "Tailwind"],
           year: 2026,
-          image: "/project1.jpg",
+          image: "/assets/ferb.jpg",
         },
     locale === "pt"
       ? {
@@ -39,7 +37,7 @@ export default function Home() {
           desc: "Descrição curta do projeto 2.",
           techs: ["React", "Framer Motion"],
           year: 2025,
-          image: "/project2.jpg",
+          image: "/assets/ferb.jpg",
         }
       : {
           name: "Project 2",
@@ -47,7 +45,7 @@ export default function Home() {
           desc: "Short description of project 2.",
           techs: ["React", "Framer Motion"],
           year: 2025,
-          image: "/project2.jpg",
+          image: "/assets/ferb.jpg",
         },
     locale === "pt"
       ? {
@@ -56,7 +54,7 @@ export default function Home() {
           desc: "Descrição curta do projeto 3.",
           techs: ["Node.js", "Express"],
           year: 2024,
-          image: "/project3.jpg",
+          image: "/assets/ferb.jpg",
         }
       : {
           name: "Project 3",
@@ -64,7 +62,7 @@ export default function Home() {
           desc: "Short description of project 3.",
           techs: ["Node.js", "Express"],
           year: 2024,
-          image: "/project3.jpg",
+          image: "/assets/ferb.jpg",
         },
   ];
 
@@ -77,7 +75,7 @@ export default function Home() {
           <ProjectList projects={projects} />
         </section>
       </main>
-      <Footer name={name} github="https://github.com/seuusuario" linkedin="https://linkedin.com/in/seuusuario" />
+      <Footer name={name} github="https://github.com/flavioxe" linkedin="https://linkedin.com/in/flaviohmsilva" />
     </>
   );
 }

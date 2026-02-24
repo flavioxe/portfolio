@@ -1,7 +1,6 @@
 "use client";
 
 export { ProjectList };
-export type { Project };
 import { FC, useContext, useState } from "react";
 import { I18nContext } from "./I18nContext";
 import { motion } from "framer-motion";
@@ -32,14 +31,13 @@ const fadeInUp = {
   },
 };
 
-const ProjectItem: FC<{ project: Project }> = ({ project }) => {
-  const [hovered, setHovered] = useState(false);
+const ProjectItem: FC<{ project: Project; onHover: (img: string | null) => void }> = ({ project, onHover }) => {
   return (
     <div
-      className="group flex items-center gap-4 px-4 py-4 border-b-[rgba(255,255,255,0.1)] hover:border-b-foreground transition-colors cursor-pointer w-full relative"
+      className="group flex items-center gap-4 px-4 py-4 border-b-[rgba(255,255,255,0.1)] hover:border-b-foreground transition-colors cursor-pointer w-full"
       style={{ transition: "border-color 0.2s", cursor: "pointer" }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseEnter={() => onHover(project.image)}
+      onMouseLeave={() => onHover(null)}
     >
       <div className="flex-1 min-w-0">
         <a href={project.url} target="_blank" rel="noopener" className="block">
@@ -51,32 +49,15 @@ const ProjectItem: FC<{ project: Project }> = ({ project }) => {
         </div>
         <span className="font-mono text-sm text-muted mt-1 block">{project.desc}</span>
       </div>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={hovered ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-        transition={{ duration: 0.25 }}
-        className="ml-4"
-        style={{ width: hovered ? 160 : 0, minWidth: hovered ? 160 : 0 }}
-      >
-        {hovered && (
-          <Image
-            src={project.image}
-            alt={project.name}
-            width={160}
-            height={90}
-            className="rounded-[4px] border border-[rgba(255,255,255,0.1)] object-cover"
-            style={{ aspectRatio: "16/9" }}
-          />
-        )}
-      </motion.div>
     </div>
   );
 };
 
 const ProjectList: FC<ProjectListProps> = ({ projects, className = "" }) => {
   const { t } = useContext(I18nContext);
+  const [hoverImg, setHoverImg] = useState<string | null>(null);
   return (
-    <section id="projects" className={`w-full flex flex-col gap-2 ${className}`}> 
+    <section id="projects" className={`w-full flex flex-col gap-2 relative ${className}`}> 
       {projects.map((proj, idx) => (
         <motion.div
           key={proj.name}
@@ -85,10 +66,28 @@ const ProjectList: FC<ProjectListProps> = ({ projects, className = "" }) => {
           variants={fadeInUp}
           transition={{ duration: 0.6, delay: idx * 0.08 }}
         >
-          <ProjectItem project={proj} />
+          <ProjectItem project={proj} onHover={setHoverImg} />
         </motion.div>
       ))}
+      {hoverImg && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.25 }}
+          className="fixed md:absolute bottom-8 right-8 z-50"
+          style={{ width: 400, height: 225, pointerEvents: "none" }}
+        >
+          <Image
+            src={hoverImg}
+            alt="Preview"
+            width={400}
+            height={225}
+            className="rounded-sm border border-[rgba(255,255,255,0.1)] object-cover transition-all duration-200"
+            style={{ aspectRatio: "16/9", filter: "grayscale(60%)" }}
+          />
+        </motion.div>
+      )}
     </section>
   );
 };
-
