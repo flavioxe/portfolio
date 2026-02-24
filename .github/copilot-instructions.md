@@ -3,6 +3,7 @@
 Este projeto é um portfólio pessoal construído com Next.js 15, App Router, TypeScript e Tailwind CSS, inspirado no minimalismo utilitário de Paco Coursey e Rauno Freiberg.
 
 ## Design
+
 - **Paleta:**
   - Fundo: #0a0a0a
   - Texto principal: #ededed
@@ -18,11 +19,13 @@ Este projeto é um portfólio pessoal construído com Next.js 15, App Router, Ty
   - Rodapé minimalista com links para GitHub e LinkedIn
 
 ## Scripts
+
 - `npm run dev` — inicia o servidor de desenvolvimento
 - `npm run build` — build de produção
 - `npm start` — inicia o servidor de produção
 
 ## Personalização
+
 - Edite `app/page.tsx` para alterar projetos, nome e links.
 - Ajuste as cores e fontes em `tailwind.config.ts` e `app/globals.css`.
 

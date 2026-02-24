@@ -1,4 +1,3 @@
-
 # Portfolio Minimalista Utilitário
 
 > Portfólio pessoal minimalista, responsivo e internacionalizado, inspirado no design utilitário de Paco Coursey e Rauno Freiberg.
@@ -23,22 +22,22 @@
 ## Decisões de Design
 
 - **Minimalismo utilitário:**
-	- Sem sombras, cartões ou cores chamativas.
-	- Foco em tipografia, espaçamento e clareza.
+  - Sem sombras, cartões ou cores chamativas.
+  - Foco em tipografia, espaçamento e clareza.
 - **Paleta:**
-	- Fundo: `#0a0a0a`
-	- Texto principal: `#ededed`
-	- Texto secundário: `#a1a1a1`
-	- Bordas: `1px rgba(255,255,255,0.1)`
+  - Fundo: `#0a0a0a`
+  - Texto principal: `#ededed`
+  - Texto secundário: `#a1a1a1`
+  - Bordas: `1px rgba(255,255,255,0.1)`
 - **Fontes:**
-	- Corpo: Geist Sans
-	- Detalhes técnicos: Geist Mono
+  - Corpo: Geist Sans
+  - Detalhes técnicos: Geist Mono
 - **Layout:**
-	- Header fixo com backdrop-blur
-	- Hero tipográfico (nome e cargo)
-	- Lista de projetos (links ocupam linha toda, borda sutil no hover)
-	- Rodapé minimalista com links para GitHub e LinkedIn
-	- Detalhe pessoal: "Crafting digital structures from Recife, Brazil."
+  - Header fixo com backdrop-blur
+  - Hero tipográfico (nome e cargo)
+  - Lista de projetos (links ocupam linha toda, borda sutil no hover)
+  - Rodapé minimalista com links para GitHub e LinkedIn
+  - Detalhe pessoal: "Crafting digital structures from Recife, Brazil."
 
 ## Estrutura do Projeto
 

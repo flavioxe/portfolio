@@ -1,13 +1,12 @@
-
 @import "tailwindcss";
 
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
   --muted: #a1a1a1;
-  --border-subtle: rgba(255,255,255,0.1);
-  --font-geist-sans: 'Geist Variable', 'Geist', 'Inter', 'sans-serif';
-  --font-geist-mono: 'Geist Mono', 'Menlo', 'monospace';
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --font-geist-sans: "Geist Variable", "Geist", "Inter", "sans-serif";
+  --font-geist-mono: "Geist Mono", "Menlo", "monospace";
 }
 
 body {
@@ -17,7 +16,9 @@ body {
   font-size: 1rem;
   line-height: 1.75;
   letter-spacing: 0;
-  font-feature-settings: "ss01" on, "cv01" on;
+  font-feature-settings:
+    "ss01" on,
+    "cv01" on;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

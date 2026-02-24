@@ -20,33 +20,51 @@ export default function Home() {
           name: "Projeto 1",
           url: "#",
           desc: "Descrição curta do projeto 1.",
+          techs: ["Next.js", "TypeScript", "Tailwind"],
+          year: 2026,
+          image: "/project1.jpg",
         }
       : {
           name: "Project 1",
           url: "#",
           desc: "Short description of project 1.",
+          techs: ["Next.js", "TypeScript", "Tailwind"],
+          year: 2026,
+          image: "/project1.jpg",
         },
     locale === "pt"
       ? {
           name: "Projeto 2",
           url: "#",
           desc: "Descrição curta do projeto 2.",
+          techs: ["React", "Framer Motion"],
+          year: 2025,
+          image: "/project2.jpg",
         }
       : {
           name: "Project 2",
           url: "#",
           desc: "Short description of project 2.",
+          techs: ["React", "Framer Motion"],
+          year: 2025,
+          image: "/project2.jpg",
         },
     locale === "pt"
       ? {
           name: "Projeto 3",
           url: "#",
           desc: "Descrição curta do projeto 3.",
+          techs: ["Node.js", "Express"],
+          year: 2024,
+          image: "/project3.jpg",
         }
       : {
           name: "Project 3",
           url: "#",
           desc: "Short description of project 3.",
+          techs: ["Node.js", "Express"],
+          year: 2024,
+          image: "/project3.jpg",
         },
   ];
 
