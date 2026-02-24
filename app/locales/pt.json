@@ -1,0 +1,14 @@
+{
+  "footer": {
+    "recife": "Construindo estruturas digitais a partir do Recife, Brasil.",
+    "copyright": "© {year} {name}",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "about": {
+    "title": "Sobre",
+    "description": "Portfólio minimalista focado em clareza e utilidade."
+  },
+  "language": "Português",
+  "switchTo": "Mudar para Inglês"
+}

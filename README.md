@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Portfolio Minimalista Utilitário
 
-First, run the development server:
+> Portfólio pessoal minimalista, responsivo e internacionalizado, inspirado no design utilitário de Paco Coursey e Rauno Freiberg.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tecnologias & Arquitetura
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js 16 (App Router)** — Framework React para SSR/SSG, estrutura de rotas moderna.
+- **React 19** — Biblioteca principal para UI.
+- **TypeScript** — Tipagem estática para maior robustez.
+- **Tailwind CSS 4** — Utilitário CSS para estilização rápida e consistente.
+- **Framer Motion** — Animações suaves e minimalistas.
+- **ESLint** — Linting e padronização de código.
+- **next/font** — Otimização de fontes (Geist Sans & Geist Mono).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Internacionalização (i18n)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Suporte a **português** e **inglês**.
+- Troca dinâmica de idioma via contexto React (`I18nContext` e `I18nProvider`).
+- Textos traduzidos em arquivos JSON (`app/locales/en.json`, `app/locales/pt.json`).
+- Botões "PT | EN" no topo para alternar idioma.
 
-## Learn More
+## Decisões de Design
 
-To learn more about Next.js, take a look at the following resources:
+- **Minimalismo utilitário:**
+	- Sem sombras, cartões ou cores chamativas.
+	- Foco em tipografia, espaçamento e clareza.
+- **Paleta:**
+	- Fundo: `#0a0a0a`
+	- Texto principal: `#ededed`
+	- Texto secundário: `#a1a1a1`
+	- Bordas: `1px rgba(255,255,255,0.1)`
+- **Fontes:**
+	- Corpo: Geist Sans
+	- Detalhes técnicos: Geist Mono
+- **Layout:**
+	- Header fixo com backdrop-blur
+	- Hero tipográfico (nome e cargo)
+	- Lista de projetos (links ocupam linha toda, borda sutil no hover)
+	- Rodapé minimalista com links para GitHub e LinkedIn
+	- Detalhe pessoal: "Crafting digital structures from Recife, Brazil."
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Estrutura do Projeto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `app/` — Componentes, páginas, contexto de internacionalização, estilos globais.
+- `app/components/` — Componentes reutilizáveis (Header, Footer, Hero, ProjectList, I18nProvider).
+- `app/locales/` — Arquivos de tradução.
+- `tailwind.config.ts` e `app/globals.css` — Customização de tema e estilos.
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `npm run dev` — Inicia o servidor de desenvolvimento
+- `npm run build` — Build de produção
+- `npm start` — Inicia o servidor de produção
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Personalização
+
+- Edite `app/page.tsx` para alterar projetos, nome e links.
+- Ajuste cores e fontes em `tailwind.config.ts` e `app/globals.css`.
+- Traduções em `app/locales/en.json` e `app/locales/pt.json`.
+
+---
+
+> Minimalismo Utilitário: foco em tipografia, espaçamento e clareza, sem sombras ou cartões coloridos.

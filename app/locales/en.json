@@ -1,0 +1,14 @@
+{
+  "footer": {
+    "recife": "Crafting digital structures from Recife, Brazil.",
+    "copyright": "© {year} {name}",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "about": {
+    "title": "About",
+    "description": "Minimalist portfolio focused on clarity and utility."
+  },
+  "language": "English",
+  "switchTo": "Switch to Portuguese"
+}
