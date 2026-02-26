@@ -4,6 +4,7 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import AboutSection from "./components/AboutSection";
+import ExperienceAndContact from "./components/ExperienceAndContact";
 import { ProjectList, Project } from "./components/ProjectList";
 import ConnectSection from "./components/ConnectSection";
 import Footer from "./components/Footer";
@@ -76,6 +77,7 @@ export default function Home() {
         <section className="w-full max-w-3xl mx-auto flex flex-col items-start gap-8">
           <Hero name={name} role={role} />
           <AboutSection />
+          <ExperienceAndContact />
           <ProjectList projects={projects} />
           <ConnectSection />
         </section>
