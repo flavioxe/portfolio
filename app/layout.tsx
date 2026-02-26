@@ -20,6 +20,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Flávio Mendonça — Front-end Developer",
   description: "Portfólio minimalista utilitário inspirado em Paco Coursey e Rauno Freiberg.",
+  icons: {
+    icon: "/assets/F.png",
+    apple: "/assets/F.png",
+  },
 };
 
 export default function RootLayout({
