@@ -7,7 +7,12 @@
   },
   "about": {
     "title": "About",
-    "description": "Minimalist portfolio focused on clarity and utility."
+    "headline": "Architecting digital structures with a focus on precision, performance, and polish.",
+    "paragraphs": [
+      "I am a Front-end Developer with a degree in Architecture and Urbanism. This background shaped how I write code: I don’t just build interfaces; I design digital structures that are modular, performant, and visually balanced. With 4 years of experience, I specialize in crafting scalable web solutions using React, Next.js, and TypeScript.",
+      "Lately, I’ve been focusing on improving platform performance through smart component reuse and modern framework architectures. My goal is always to deliver software that isn’t just functional, but inherently polished and well-structured.",
+      "When I’m not coding, I’m usually out on a bike or at a music festival. The energy of live music and the rhythm of a long ride are the perfect balance to the precision of engineering."
+    ]
   },
   "language": "English",
   "switchTo": "Switch to Portuguese"

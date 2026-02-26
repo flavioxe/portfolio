@@ -1,8 +1,7 @@
 "use client";
 
 export { ProjectList };
-import { FC, useContext, useState } from "react";
-import { I18nContext } from "./I18nContext";
+import { FC, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -39,22 +38,22 @@ const ProjectItem: FC<{ project: Project; onHover: (img: string | null) => void 
       onMouseEnter={() => onHover(project.image)}
       onMouseLeave={() => onHover(null)}
     >
-      <div className="flex-1 min-w-0">
+      <div className="flex-1 min-w-0 font-sans">
         <a href={project.url} target="_blank" rel="noopener" className="block">
-          <span className="font-sans text-lg text-foreground group-hover:underline">{project.name}</span>
+          <span className="text-lg text-foreground group-hover:underline">{project.name}</span>
         </a>
         <div className="flex items-center gap-2 mt-1">
-          <span className="font-mono text-xs text-muted">{project.techs.join(", ")}</span>
-          <span className="font-mono text-xs text-muted">• {project.year}</span>
+          <span className="text-xs text-muted">{project.techs.join(", ")}</span>
+          <span className="text-xs text-muted">• {project.year}</span>
         </div>
-        <span className="font-mono text-sm text-muted mt-1 block">{project.desc}</span>
+        <span className="text-sm text-muted mt-1 block">{project.desc}</span>
       </div>
     </div>
   );
 };
 
 const ProjectList: FC<ProjectListProps> = ({ projects, className = "" }) => {
-  const { t } = useContext(I18nContext);
+  // const { t } = useContext(I18nContext); // Removido pois não está em uso
   const [hoverImg, setHoverImg] = useState<string | null>(null);
   return (
     <section id="projects" className={`w-full flex flex-col gap-2 relative ${className}`}> 

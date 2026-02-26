@@ -1,5 +1,6 @@
 "use client";
 import { createContext } from "react";
+
 export type Locale = "en" | "pt";
 
 export interface I18nContextProps {

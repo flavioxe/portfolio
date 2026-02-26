@@ -1,7 +1,9 @@
 "use client";
 
+
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import AboutSection from "./components/AboutSection";
 import { ProjectList, Project } from "./components/ProjectList";
 import Footer from "./components/Footer";
 import { useContext } from "react";
@@ -72,10 +74,11 @@ export default function Home() {
       <main className="flex flex-col items-center min-h-screen pt-28 pb-12 px-4 bg-background">
         <section className="w-full max-w-3xl mx-auto flex flex-col items-start gap-8">
           <Hero name={name} role={role} />
+          <AboutSection />
           <ProjectList projects={projects} />
         </section>
       </main>
-      <Footer name={name} github="https://github.com/flavioxe" linkedin="https://linkedin.com/in/flaviohmsilva" />
+      <Footer github="https://github.com/flavioxe" linkedin="https://linkedin.com/in/flaviohmsilva" />
     </>
   );
 }

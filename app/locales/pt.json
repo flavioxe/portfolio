@@ -7,7 +7,12 @@
   },
   "about": {
     "title": "Sobre",
-    "description": "Portfólio minimalista focado em clareza e utilidade."
+    "headline": "Arquitetando estruturas digitais com foco em precisão, performance e polimento.",
+    "paragraphs": [
+      "Sou desenvolvedor Front-end formado em Arquitetura e Urbanismo. Essa trajetória moldou a forma como escrevo código: não apenas construo interfaces, mas desenho estruturas digitais modulares, performáticas e visualmente equilibradas. Com 4 anos de experiência, foco em criar soluções web escaláveis com React, Next.js e TypeScript.",
+      "Recentemente, tenho trabalhado na otimização de plataformas através da reutilização inteligente de componentes e arquiteturas modernas de frameworks. Meu objetivo é sempre entregar software que não seja apenas funcional, mas inerentemente polido e bem estruturado.",
+      "Fora das telas, você me encontra pedalando pela cidade ou em algum festival de música. Sinto que a energia da música ao vivo e o ritmo de uma pedalada longa são os contrapesos perfeitos para o foco exigido pela engenharia."
+    ]
   },
   "language": "Português",
   "switchTo": "Mudar para Inglês"

@@ -1,5 +1,5 @@
 import { FC, useContext } from "react";
-import { I18nContext } from "./I18nContext";
+import { I18nContext } from "../contexts/I18nContext";
 import { motion } from "framer-motion";
 
 interface HeaderProps {
@@ -26,8 +26,8 @@ const Header: FC<HeaderProps> = ({ className = "" }) => {
       variants={fadeInUp}
       className={`fixed top-0 left-0 w-full z-10 backdrop-blur border-b-[rgba(255,255,255,0.1)] bg-background/80 ${className}`}
     >
-      <div className="mx-auto max-w-3xl px-6 py-3 flex items-center justify-between">
-        <span className="font-mono text-xs text-muted tracking-widest select-none">portfolio</span>
+      <div className="mx-auto max-w-3xl py-3 flex items-center justify-between">
+        <span className="font-sans text-xs text-muted tracking-widest select-none">portfolio</span>
         <nav className="flex gap-4 text-muted text-sm items-center">
           <a href="#projects" className="hover:text-foreground transition-colors cursor-pointer">
             {locale === "pt" ? "Projetos" : "Projects"}

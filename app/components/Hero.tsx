@@ -1,5 +1,4 @@
-import { FC, useContext } from "react";
-import { I18nContext } from "./I18nContext";
+import { FC } from "react";
 import { motion } from "framer-motion";
 
 interface HeroProps {
@@ -20,16 +19,16 @@ const fadeInUp = {
 };
 
 const Hero: FC<HeroProps> = ({ name, role, className = "" }) => {
-  const { t } = useContext(I18nContext);
+  // ...
   return (
     <motion.div
       initial="hidden"
       animate="visible"
       variants={fadeInUp}
-      className={`mb-8 ${className}`}
+      className={`flex items-end gap-2 ${className}`}
     >
       <h1 className="text-4xl md:text-5xl font-semibold leading-relaxed text-foreground font-sans">{name}</h1>
-      <h2 className="text-lg md:text-xl font-mono text-muted leading-relaxed mt-2">{t("about.title")}: {role}</h2>
+      <span className="text-lg md:text-xl font-mono text-muted leading-relaxed pb-2">{role}</span>
     </motion.div>
   );
 };

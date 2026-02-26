@@ -1,10 +1,9 @@
 import { FC, useContext } from "react";
-import { I18nContext } from "./I18nContext";
+import { I18nContext } from "../contexts/I18nContext";
 import { motion } from "framer-motion";
 import WeatherWidget from "./WeatherWidget";
 
 interface FooterProps {
-  name: string;
   github: string;
   linkedin: string;
   className?: string;
@@ -21,9 +20,8 @@ const fadeInUp = {
   },
 };
 
-const Footer: FC<FooterProps> = ({ name, github, linkedin, className = "" }) => {
+const Footer: FC<FooterProps> = ({ github, linkedin, className = "" }) => {
   const { t } = useContext(I18nContext);
-  const year = new Date().getFullYear();
   return (
     <motion.footer
       initial="hidden"
@@ -31,13 +29,12 @@ const Footer: FC<FooterProps> = ({ name, github, linkedin, className = "" }) => 
       variants={fadeInUp}
       className={`w-full border-t-[rgba(255,255,255,0.1)] py-6 mt-8 bg-background/80 ${className}`}
     >
-      <div className="mx-auto max-w-3xl px-6 flex flex-col gap-2 md:flex-row md:items-center md:justify-between text-muted text-sm">
+      <div className="mx-auto max-w-3xl px-6 flex flex-col gap-2 md:flex-row md:items-center md:justify-between text-muted text-sm font-sans">
         <div className="flex items-center gap-4">
           <WeatherWidget />
-          <span>{t("footer.copyright", { year, name })}</span>
         </div>
-        <span className="hidden md:inline-block select-none opacity-70">{t("footer.recife")}</span>
-        <div className="flex gap-4">
+
+        <div className="flex gap-4 md:items-center">
           <a href={github} target="_blank" rel="noopener" className="hover:text-foreground transition-colors cursor-pointer">{t("footer.github")}</a>
           <a href={linkedin} target="_blank" rel="noopener" className="hover:text-foreground transition-colors cursor-pointer">{t("footer.linkedin")}</a>
         </div>
