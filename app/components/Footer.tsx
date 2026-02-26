@@ -29,7 +29,7 @@ const Footer: FC<FooterProps> = ({ github, linkedin, className = "" }) => {
       variants={fadeInUp}
       className={`w-full border-t-[rgba(255,255,255,0.1)] py-6 mt-8 bg-background/80 ${className}`}
     >
-      <div className="mx-auto max-w-3xl px-6 flex flex-col gap-2 md:flex-row md:items-center md:justify-between text-muted text-sm font-sans">
+      <div className="mx-auto max-w-3xl flex flex-col gap-2 md:flex-row md:items-center md:justify-between text-muted text-sm font-sans">
         <div className="flex items-center gap-4">
           <WeatherWidget />
         </div>

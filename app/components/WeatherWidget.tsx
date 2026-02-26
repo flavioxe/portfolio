@@ -34,11 +34,8 @@ export default function WeatherWidget() {
       });
   }, []);
 
-  const color = weather ? getWeatherColor(weather) : "bg-muted";
-
   return (
     <div className="flex items-center gap-2 font-sans text-xs text-muted select-none">
-      <span className={`w-2 h-2 rounded-full ${color}`}></span>
       {loading
         ? "Recife, BR ..."
         : temp

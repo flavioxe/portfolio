@@ -19,7 +19,7 @@ export default function AboutSection() {
       >
         {headline}
       </h4>
-      <div className="flex flex-col gap-5 max-w-2xl w-full text-muted leading-relaxed text-base md:text-lg mb-8 font-sans">
+      <div className="flex flex-col gap-5 max-w-2xl w-full text-muted leading-relaxed text-base md:text-lg font-sans">
         {Array.isArray(paragraphs) && paragraphs.map((p, i) => (
           <p key={i}>{p}</p>
         ))}

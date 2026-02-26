@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import AboutSection from "./components/AboutSection";
 import { ProjectList, Project } from "./components/ProjectList";
+import ConnectSection from "./components/ConnectSection";
 import Footer from "./components/Footer";
 import { useContext } from "react";
 import { I18nContext } from "./components/I18nContext";
@@ -76,6 +77,7 @@ export default function Home() {
           <Hero name={name} role={role} />
           <AboutSection />
           <ProjectList projects={projects} />
+          <ConnectSection />
         </section>
       </main>
       <Footer github="https://github.com/flavioxe" linkedin="https://linkedin.com/in/flaviohmsilva" />

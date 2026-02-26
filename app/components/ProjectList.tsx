@@ -53,7 +53,7 @@ const ProjectItem: FC<{ project: Project; onHover: (img: string | null) => void 
 };
 
 const ProjectList: FC<ProjectListProps> = ({ projects, className = "" }) => {
-  // const { t } = useContext(I18nContext); // Removido pois não está em uso
+  // const { t } = useContext(I18nContext);
   const [hoverImg, setHoverImg] = useState<string | null>(null);
   return (
     <section id="projects" className={`w-full flex flex-col gap-2 relative ${className}`}> 
