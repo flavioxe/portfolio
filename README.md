@@ -82,15 +82,6 @@ Typical files:
 - Performance-minded: fonts via `next/font`, code splitting via dynamic locale imports, and small components to favor caching.
 - Animations are subtle and functional — Framer Motion powers entry fades and description fade in/out.
 
-## Deployment Notes
-
-- Any standard Next.js host (Vercel, Netlify, Fly) works. Ensure `NODE_ENV=production` for the build step.
-- If deploying to a subpath, update `next.config.js` accordingly.
-
----
-
-If you want I can also add a short development checklist (prettier, lint, pre-commit hooks) and update `package.json` scripts — tell me which you'd prefer.
-
 ## UX Notes
 
 - The Projects list is intentionally minimal: titles are visible by default; details appear on hover/focus to keep a clean, "blueprint"-like visual.
