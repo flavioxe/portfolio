@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Seu Nome — Front-end Developer",
+  title: "Flávio Mendonça — Front-end Developer",
   description: "Portfólio minimalista utilitário inspirado em Paco Coursey e Rauno Freiberg.",
 };
 
