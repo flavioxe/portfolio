@@ -14,6 +14,32 @@
       "When I’m not coding, I’m usually out on a bike or at a music festival. The energy of live music and the rhythm of a long ride are the perfect balance to the precision of engineering."
     ]
   },
+  "projects": [
+    {
+      "name": "Music Review Platform",
+      "url": "https://album-review.vercel.app/",
+      "desc": "Music review platform featuring track-by-track ratings, automated ranking calculations, and real-time database. Built in collaboration with a UX/UI designer.",
+      "techs": ["React", "Firebase", "Express", "Sass"],
+      "year": 2026,
+      "image": "/assets/album.png"
+    },
+    {
+      "name": "Vizu One Landing Page",
+      "url": "https://vizuone.pro/",
+      "desc": "Visual identity and landing page development for an optical ecosystem. Focus on modern aesthetics and performance.",
+      "techs": ["Nuxt 4", "Vue 3", "Tailwind CSS"],
+      "year": 2026,
+      "image": "/assets/vizu.png"
+    },
+    {
+      "name": "Lean Learn",
+      "url": "https://leanlearn.com.br/",
+      "desc": "Comprehensive B2B learning ecosystem, including consumer platform, admin, and landing page. Highly configurable white-label system developed in a team.",
+      "techs": ["Vue 2", "Nuxt", "PHP (Laravel)"],
+      "year": 2024,
+      "image": "/assets/LL.png"
+    }
+  ],
   "language": "English",
   "switchTo": "Switch to Portuguese"
 }

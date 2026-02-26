@@ -14,6 +14,32 @@
       "Fora das telas, você me encontra pedalando pela cidade ou em algum festival de música. Sinto que a energia da música ao vivo e o ritmo de uma pedalada longa são os contrapesos perfeitos para o foco exigido pela engenharia."
     ]
   },
+  "projects": [
+    {
+      "name": "Plataforma de Críticas Musicais",
+      "url": "https://album-review.vercel.app/",
+      "desc": "Plataforma de críticas musicais com sistema de notas por faixa, cálculo automático de rankings e banco de dados em tempo real. Desenvolvido em parceria com designer UX/UI.",
+      "techs": ["React", "Firebase", "Express", "Sass"],
+      "year": 2026,
+      "image": "/assets/album.png"
+    },
+    {
+      "name": "Vizu One Landing Page",
+      "url": "https://vizuone.pro/",
+      "desc": "Identidade visual e desenvolvimento de landing page para ecossistema óptico. Foco em estética moderna e performance.",
+      "techs": ["Nuxt 4", "Vue 3", "Tailwind CSS"],
+      "year": 2026,
+      "image": "/assets/vizu.png"
+    },
+    {
+      "name": "Lean Learn",
+      "url": "https://leanlearn.com.br/",
+      "desc": "Ecossistema de aprendizagem B2B completo, incluindo plataforma de consumo, administrador e landing page. Sistema white label altamente configurável desenvolvido em equipe.",
+      "techs": ["Vue 2", "Nuxt", "PHP (Laravel)"],
+      "year": 2024,
+      "image": "/assets/LL.png"
+    }
+  ],
   "language": "Português",
   "switchTo": "Mudar para Inglês"
 }
