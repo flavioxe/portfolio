@@ -1,65 +1,76 @@
 "use client";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { I18nContext } from "../contexts/I18nContext";
-import { motion, AnimatePresence } from "framer-motion";
 import { BlurFade } from "@/components/ui/blur-fade";
+import { Accordion05, Accordion05Item } from "@/components/ui/accordion-05";
 
 type Experience = {
-  role: string;
+  role: { en: string; pt: string };
   company: string;
   period: { en: string; pt: string };
   bullets: { en: string[]; pt: string[] };
+  allowTitleWrap?: boolean;
 };
 
 const experiences: Experience[] = [
   {
-    role: "Front-end Developer",
+    role: {
+      en: "Front-end Developer",
+      pt: "Desenvolvedor Front-end",
+    },
     company: "Allycode",
     period: {
-      pt: "2021 — Presente",
-      en: "2021 — Present"
+      pt: "2021 — 2026",
+      en: "2021 — 2026"
     },
     bullets: {
       en: [
-        "Development of scalable applications with Next.js and Nuxt",
-        "Structuring reusable components with Vue, React.js, and TypeScript",
-        "Development and maintenance of production applications (React, Next, Vue)",
-        "Integration of REST APIs for dynamic interfaces",
-        "Development of responsive UI with Tailwind CSS",
-        "Participation in architectural decisions."
+        "Built complete modules for a large-scale B2B white-label education platform, including landing page, content consumption views and admin dashboards, using Vue and Nuxt, ensuring high configurability across multiple simultaneous clients.",
+        "Implemented Kanban-style sales pipelines and a client portal with digital document signing, using React and Next.js, delivering end-to-end complex flows for automotive dealerships.",
+        "Collaborated on feature definition and user flows via Figma and Miro, translating product decisions into responsive interfaces and reusable components.",
+        "Integrated REST APIs with complex business rules and third-party libraries including drag-and-drop, Filestack and Shopify, ensuring data consistency between frontend and backend.",
+        "Made targeted backend adjustments in Laravel, including migrations and database changes, extending contribution beyond the frontend when needed."
       ],
       pt: [
-        "Desenvolvimento de aplicações escaláveis com Next.js e Nuxt",
-        "Estruturação de componentes reutilizáveis com Vue, React.js e TypeScript",
-        "Desenvolvimento e manutenção de aplicações em produção (React, Next, Vue)",
-        "Integração de APIs REST para interfaces dinâmicas",
-        "Desenvolvimento de UI responsiva com Tailwind CSS",
-        "Participação em decisões arquiteturais."
+        "Traduzi designs do Figma em interfaces React e Next.js prontas para produção, construindo bibliotecas de componentes reutilizáveis e esteiras de vendas no estilo Kanban com controle de acesso por perfil para uma plataforma automotiva.",
+        "Desenvolvi módulos completos de uma plataforma educacional B2B white label de grande escala utilizando Vue e Nuxt com SSR, incluindo landing page, telas de consumo de conteúdo e painéis administrativos, garantindo alta configurabilidade para múltiplos clientes simultâneos.",
+        "Integrei APIs REST com regras de negócio complexas via Axios/Fetch, incluindo integrações com drag-and-drop, Filestack e Shopify, assegurando consistência de dados entre frontend e backend.",
+        "Apliquei boas práticas de HTML semântico, CSS responsivo e performance web em todos os projetos, com foco em Mobile-First e compatibilidade cross-browser.",
+        "Realizei ajustes no backend Laravel, como migrations e alterações de banco, ampliando atuação além do frontend quando necessário."
       ],
     },
   },
   {
-    role: "Software Developer",
-    company: "Jala University (International Bootcamp)",
+    role: {
+      en: "Software Developer",
+      pt: "Desenvolvedor de Software",
+    },
+    company: "Jala University\n(International Bootcamp)",
+    allowTitleWrap: true,
     period: {
-      pt: "Fevereiro de 2025 – Junho de 2025",
-      en: "February 2025 – June 2025"
+      pt: "2025 — 2025",
+      en: "2025 — 2025"
     },
     bullets: {
       en: [
-        "Full-stack development of applications with a focus on React and TypeScript",
-        "Application of modular architecture principles and good versioning practices with Git",
-        "Collaboration in global teams with 100% English communication."
+        "Co-designed the application UI in Figma alongside the lead designer and product owner, working in a fully English-speaking international environment.",
+        "Developed the frontend of an electronic document signing platform using React and TypeScript.",
+        "Implemented unit tests with Jest, followed GitFlow branching strategy and ran the project with Docker.",
+        "Participated in daily stand-ups, sprint planning, code reviews and weekly deliverables in an agile workflow."
       ],
       pt: [
-        "Desenvolvimento de aplicações fullstack com foco em React e TypeScript",
-        "Aplicação de princípios de arquitetura modular e boas práticas de versionamento com Git",
-        "Colaboração em times globais com comunicação 100% em inglês."
+        "Co-criei o design da aplicação no Figma em colaboração com o designer líder e o P.O. do projeto, em ambiente 100% em inglês.",
+        "Desenvolvi o frontend de uma plataforma de assinatura eletrônica de documentos com React e TypeScript.",
+        "Implementei testes unitários com Jest, utilizei GitFlow para versionamento e rodei o projeto com Docker.",
+        "Participei de dailys, planning, code reviews e entregas semanais em metodologia ágil."
       ],
     },
   },
   {
-    role: "Architecture Assistant",
+    role: {
+      en: "Architecture Assistant",
+      pt: "Assistente de Arquitetura",
+    },
     company: "Lourdes Buregio",
     period: {
       pt: "2020 — 2020",
@@ -80,59 +91,25 @@ const experiences: Experience[] = [
 
 export default function ExperienceAndContact() {
   const { locale } = useContext(I18nContext);
-  const [activeIdx, setActiveIdx] = useState<number | null>(null);
+  const items: Accordion05Item[] = experiences.map((exp, idx) => ({
+    id: String(idx + 1),
+    title: locale === "pt" ? exp.role.pt : exp.role.en,
+    subtitle: exp.company,
+    meta: locale === "pt" ? exp.period.pt : exp.period.en,
+    content: locale === "pt" ? exp.bullets.pt : exp.bullets.en,
+    allowTitleWrap: exp.allowTitleWrap,
+  }));
 
   return (
     <section className="w-full max-w-2xl mx-auto mt-20 mb-12 font-sans">
       <BlurFade delay={0.04} inView>
-        <h2 className="text-2xl font-semibold text-foreground mb-6">Work</h2>
+        <h2 className="text-2xl font-semibold text-foreground mb-6">
+          {locale === "pt" ? "Experiencia" : "Work"}
+        </h2>
       </BlurFade>
-      <div className="flex flex-col gap-2">
-        {experiences.map((exp, idx) => (
-          <BlurFade key={idx} delay={0.1 + idx * 0.08} inView>
-            <motion.div
-              className={`rounded transition-all cursor-pointer px-4 py-5 flex flex-col items-start justify-between ${
-                activeIdx === idx
-                  ? "bg-background/60 border border-subtle"
-                  : "hover:bg-background/40"
-              }`}
-              onMouseEnter={() => setActiveIdx(idx)}
-              onMouseLeave={() => setActiveIdx(null)}
-              onClick={() => setActiveIdx(activeIdx === idx ? null : idx)}
-              style={{
-                opacity:
-                  activeIdx !== null && activeIdx !== idx ? 0.4 : 1,
-                transition: "opacity 0.2s",
-              }}
-            >
-              <div className="flex w-full flex-col gap-2 md:flex-row md:items-center md:gap-6">
-                <span className="text-base font-medium text-foreground">{exp.role}</span>
-                <span className="text-sm text-muted">{exp.company}</span>
-                <span className="text-xs text-muted md:ml-auto">{locale === "pt" ? exp.period.pt : exp.period.en}</span>
-              </div>
-              <AnimatePresence>
-                {activeIdx === idx && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.25 }}
-                    className="w-full mt-6"
-                  >
-                    <ul className="pl-4 text-sm text-muted list-disc">
-                      {(locale === "pt" ? exp.bullets.pt : exp.bullets.en).map((b, i) => (
-                        <BlurFade key={i} delay={i * 0.05}>
-                          <li>{b}</li>
-                        </BlurFade>
-                      ))}
-                    </ul>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          </BlurFade>
-        ))}
-      </div>
+      <BlurFade delay={0.1} inView>
+        <Accordion05 items={items} defaultValue="1" compactTitles={locale === "pt"} />
+      </BlurFade>
     </section>
   );
 }

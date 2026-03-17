@@ -1,5 +1,6 @@
 import { BlurFade } from "@/components/ui/blur-fade"
 import { SmokeBackground } from "@/components/ui/spooky-smoke-animation";
+import { Accordion05 } from "@/components/ui/accordion-05";
 
 export function BlurFadeTextDemo() {
   return (
@@ -24,4 +25,8 @@ export function DefaultSmokeBackgroundDemo() {
 
 export function CustomizedSmokeBackgroundDemo() {
   return <SmokeBackground smokeColor="#ff0000" />;
+}
+
+export function Accordion05Demo() {
+  return <Accordion05 />;
 }

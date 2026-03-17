@@ -154,7 +154,7 @@ function ProjectCarousel({ items, ctaLabel }: { items: Project[]; ctaLabel: stri
 
     const timer = window.setInterval(() => {
       setPosition((previous) => Math.min(previous + 1, itemsForRender.length - 1));
-    }, 3000);
+    }, 10000);
 
     return () => window.clearInterval(timer);
   }, [isHovered, items.length, itemsForRender.length]);
