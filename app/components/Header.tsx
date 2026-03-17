@@ -24,7 +24,7 @@ const Header: FC<HeaderProps> = ({ className = "" }) => {
       initial="hidden"
       animate="visible"
       variants={fadeInUp}
-      className={`fixed top-0 left-0 w-full z-10 backdrop-blur border-b-[rgba(255,255,255,0.1)] bg-background/80 ${className}`}
+      className={`fixed top-0 left-0 z-30 w-full border-b border-white/10 bg-background/92 backdrop-blur-md ${className}`}
     >
       <div className="mx-auto max-w-3xl py-3 flex items-center justify-between">
         <span className="font-sans text-xs text-muted tracking-widest select-none">portfolio</span>
