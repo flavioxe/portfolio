@@ -104,7 +104,7 @@ export default function ExperienceAndContact() {
     <section className="w-full max-w-2xl mx-auto mt-20 mb-12 font-sans">
       <BlurFade delay={0.04} inView>
         <h2 className="text-2xl font-semibold text-foreground mb-6">
-          {locale === "pt" ? "Experiencia" : "Work"}
+          {locale === "pt" ? "Experiência" : "Work"}
         </h2>
       </BlurFade>
       <BlurFade delay={0.1} inView>

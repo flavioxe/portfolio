@@ -297,7 +297,7 @@ const ProjectList = ({ projects, className = "" }: ProjectListProps) => {
   const ctaLabel = locale === "pt" ? "Ver projeto" : "Open project";
 
   let localizedProjects: Project[] = projects ?? [];
-  const rawProjects = t("projects");
+  const rawProjects = t<Project[]>("projects");
   if (Array.isArray(rawProjects)) localizedProjects = rawProjects as Project[];
 
   if (!Array.isArray(localizedProjects) || localizedProjects.length === 0) {

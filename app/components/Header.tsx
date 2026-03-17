@@ -12,7 +12,8 @@ const Header: FC<HeaderProps> = ({ className = "" }) => {
     <header className={`fixed top-0 left-0 z-30 w-full border-b border-white/10 bg-background/92 backdrop-blur-md ${className}`}>
       <div className="mx-auto max-w-3xl py-3 flex items-center justify-between">
         <BlurFade delay={0.02}>
-          <span className="font-sans text-xs text-muted tracking-widest select-none">portfolio</span>
+          <span className="font-sans text-xs text-muted tracking-widest select-none">flávio
+          </span>
         </BlurFade>
         <nav className="flex gap-4 text-muted text-sm items-center">
           <BlurFade delay={0.08}>

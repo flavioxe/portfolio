@@ -19,7 +19,7 @@ export default function Home() {
   const role = locale === "pt" ? "Desenvolvedor Front-end" : "Front-end Developer";
 
   return (
-    <div className="relative isolate min-h-screen overflow-hidden bg-background">
+    <div className="relative isolate min-h-screen overflow-x-hidden bg-background">
       <div className="pointer-events-none absolute inset-0 opacity-55">
         <SmokeBackground smokeColor="#9ca3af" className="h-full w-full" />
       </div>
@@ -35,7 +35,11 @@ export default function Home() {
           <ConnectSection />
         </section>
       </main>
-      <Footer github="https://github.com/flavioxe" linkedin="https://linkedin.com/in/flaviohmsilva" />
+      <Footer
+        github="https://github.com/flavioxe"
+        linkedin="https://linkedin.com/in/flaviohmsilva"
+        className="relative z-10"
+      />
     </div>
   );
 }

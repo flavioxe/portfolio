@@ -16,7 +16,9 @@ export default function ConnectSection() {
   return (
     <section className="w-full flex flex-col items-start mb-8 font-sans">
       <BlurFade delay={0.04} inView>
-        <h2 className="text-2xl font-semibold text-foreground mb-4 tracking-tight">Connect</h2>
+        <h2 className="text-2xl font-semibold text-foreground mb-4 tracking-tight">
+          {locale === "pt" ? "Contato" : "Connect"}
+        </h2>
       </BlurFade>
       <BlurFade delay={0.12} inView>
         <p className="text-sm text-muted mb-2">
