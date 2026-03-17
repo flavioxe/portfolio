@@ -29,17 +29,17 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   const t = useCallback(
     (key: string, vars?: Record<string, string | number>) => {
       const keys = key.split(".");
-      let value: any = messages;
+      let value: unknown = messages;
       for (const k of keys) {
         if (typeof value === "object" && value !== null) {
-          value = value[k];
+          value = (value as Record<string, unknown>)[k];
         } else {
           return key;
         }
       }
       if (typeof value === "string") return interpolate(value, vars);
       // Permitir retornar arrays ou objetos diretamente
-      if (Array.isArray(value) || typeof value === "object") return value;
+      if (Array.isArray(value) || typeof value === "object") return value as string;
       return key;
     },
     [messages]

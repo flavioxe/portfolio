@@ -13,7 +13,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     }
     return "en";
   });
-  const [messages, setMessages] = useState<Record<string, any>>({});
+  const [messages, setMessages] = useState<Record<string, unknown>>({});
 
   useEffect(() => {
     import(`../locales/${locale}.json`).then((mod) => setMessages(mod.default || mod));
@@ -25,13 +25,17 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   const t = useCallback(
     (key: string, vars?: Record<string, string | number>) => {
       const keys = key.split(".");
-      let value: any = messages;
+      let value: unknown = messages;
       for (const k of keys) {
-        value = value?.[k];
+        if (typeof value === "object" && value !== null && !Array.isArray(value)) {
+          value = (value as Record<string, unknown>)[k];
+        } else {
+          return key;
+        }
         if (value == null) return key;
       }
       if (typeof value === "string") return interpolate(value, vars);
-      return key;
+      return value as string;
     },
     [messages]
   );

@@ -2,6 +2,7 @@
 import { useContext, useState } from "react";
 import { I18nContext } from "../contexts/I18nContext";
 import { motion, AnimatePresence } from "framer-motion";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 type Experience = {
   role: string;
@@ -83,48 +84,53 @@ export default function ExperienceAndContact() {
 
   return (
     <section className="w-full max-w-2xl mx-auto mt-20 mb-12 font-sans">
-      <h2 className="text-2xl font-semibold text-foreground mb-6">Work</h2>
+      <BlurFade delay={0.04} inView>
+        <h2 className="text-2xl font-semibold text-foreground mb-6">Work</h2>
+      </BlurFade>
       <div className="flex flex-col gap-2">
         {experiences.map((exp, idx) => (
-          <motion.div
-            key={idx}
-            className={`rounded transition-all cursor-pointer px-4 py-5 flex items-center justify-between ${
-              activeIdx === idx
-                ? "bg-background/60 border border-subtle"
-                : "hover:bg-background/40"
-            }`}
-            onMouseEnter={() => setActiveIdx(idx)}
-            onMouseLeave={() => setActiveIdx(null)}
-            onClick={() => setActiveIdx(activeIdx === idx ? null : idx)}
-            style={{
-              opacity:
-                activeIdx !== null && activeIdx !== idx ? 0.4 : 1,
-              transition: "opacity 0.2s",
-            }}
-          >
-            <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 w-full">
-              <span className="text-base font-medium text-foreground">{exp.role}</span>
-              <span className="text-sm text-muted">{exp.company}</span>
-              <span className="text-xs text-muted ml-auto">{locale === "pt" ? exp.period.pt : exp.period.en}</span>
-            </div>
-            <AnimatePresence>
-              {activeIdx === idx && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.25 }}
-                  className="w-full mt-6"
-                >
-                  <ul className="pl-4 text-sm text-muted list-disc">
-                    {(locale === "pt" ? exp.bullets.pt : exp.bullets.en).map((b, i) => (
-                      <li key={i}>{b}</li>
-                    ))}
-                  </ul>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
+          <BlurFade key={idx} delay={0.1 + idx * 0.08} inView>
+            <motion.div
+              className={`rounded transition-all cursor-pointer px-4 py-5 flex flex-col items-start justify-between ${
+                activeIdx === idx
+                  ? "bg-background/60 border border-subtle"
+                  : "hover:bg-background/40"
+              }`}
+              onMouseEnter={() => setActiveIdx(idx)}
+              onMouseLeave={() => setActiveIdx(null)}
+              onClick={() => setActiveIdx(activeIdx === idx ? null : idx)}
+              style={{
+                opacity:
+                  activeIdx !== null && activeIdx !== idx ? 0.4 : 1,
+                transition: "opacity 0.2s",
+              }}
+            >
+              <div className="flex w-full flex-col gap-2 md:flex-row md:items-center md:gap-6">
+                <span className="text-base font-medium text-foreground">{exp.role}</span>
+                <span className="text-sm text-muted">{exp.company}</span>
+                <span className="text-xs text-muted md:ml-auto">{locale === "pt" ? exp.period.pt : exp.period.en}</span>
+              </div>
+              <AnimatePresence>
+                {activeIdx === idx && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.25 }}
+                    className="w-full mt-6"
+                  >
+                    <ul className="pl-4 text-sm text-muted list-disc">
+                      {(locale === "pt" ? exp.bullets.pt : exp.bullets.en).map((b, i) => (
+                        <BlurFade key={i} delay={i * 0.05}>
+                          <li>{b}</li>
+                        </BlurFade>
+                      ))}
+                    </ul>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          </BlurFade>
         ))}
       </div>
     </section>

@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useContext } from "react";
 import { I18nContext } from "../contexts/I18nContext";
-import Link from "next/link";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 export interface Project {
   name: string;
@@ -21,17 +21,6 @@ interface ProjectListProps {
   projects?: Project[];
   className?: string;
 }
-
-const fadeInUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-    },
-  },
-};
 
 const descVariants = {
   hidden: { opacity: 0, y: -6 },
@@ -59,38 +48,44 @@ const ProjectItem: FC<{ project: Project; onHover: (img: string | null) => void 
           onFocus={() => setShowDesc(true)}
           onBlur={() => setShowDesc(false)}
         >
-          <span className="text-lg text-foreground group-hover:underline flex items-center">{project.name}
-           <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={1.5}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="ml-2 w-3 h-3 text-muted"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <path d="M14 3h7v7" />
-              <path d="M10 14L21 3" />
-              <path d="M21 21H3V3" />
-            </svg>
-          </span>
+          <BlurFade delay={0.04} inView>
+            <span className="text-lg text-foreground group-hover:underline flex items-center">{project.name}
+             <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={1.5}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="ml-2 w-3 h-3 text-muted"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M14 3h7v7" />
+                <path d="M10 14L21 3" />
+                <path d="M21 21H3V3" />
+              </svg>
+            </span>
+          </BlurFade>
         </a>
         <div className="flex items-center gap-2 mt-1">
-          <span
-            className="text-xs text-muted"
-            onMouseEnter={() => setShowDesc(true)}
-            onMouseLeave={() => setShowDesc(false)}
-            onFocus={() => setShowDesc(true)}
-            onBlur={() => setShowDesc(false)}
-            tabIndex={0}
-            aria-label="project-techs"
-          >
-            {project.techs.join(", ")}
-          </span>
-          <span className="text-xs text-muted">• {project.year}</span>
+          <BlurFade delay={0.08} inView>
+            <span
+              className="text-xs text-muted"
+              onMouseEnter={() => setShowDesc(true)}
+              onMouseLeave={() => setShowDesc(false)}
+              onFocus={() => setShowDesc(true)}
+              onBlur={() => setShowDesc(false)}
+              tabIndex={0}
+              aria-label="project-techs"
+            >
+              {project.techs.join(", ")}
+            </span>
+          </BlurFade>
+          <BlurFade delay={0.1} inView>
+            <span className="text-xs text-muted">• {project.year}</span>
+          </BlurFade>
         </div>
         <AnimatePresence>
           {showDesc && (
@@ -116,22 +111,20 @@ const ProjectList: FC<ProjectListProps> = ({ projects, className = "" }) => {
   const [hoverImg, setHoverImg] = useState<string | null>(null);
 
   // Try to resolve projects from translations first (t can return arrays/objects)
-  let localizedProjects: any = projects;
+  let localizedProjects: Project[] = projects ?? [];
   const raw = t("projects");
-  if (Array.isArray(raw)) localizedProjects = raw;
+  if (Array.isArray(raw)) localizedProjects = raw as Project[];
 
   return (
     <section id="projects" className={`w-full flex flex-col gap-2 relative ${className}`}> 
       {Array.isArray(localizedProjects) && localizedProjects.map((proj: Project, idx: number) => (
-        <motion.div
+        <BlurFade
           key={proj.name + idx}
-          initial="hidden"
-          animate="visible"
-          variants={fadeInUp}
-          transition={{ duration: 0.6, delay: idx * 0.08 }}
+          delay={idx * 0.08}
+          inView
         >
           <ProjectItem project={proj} onHover={setHoverImg} />
-        </motion.div>
+        </BlurFade>
       ))}
       {hoverImg && (
         <motion.div
